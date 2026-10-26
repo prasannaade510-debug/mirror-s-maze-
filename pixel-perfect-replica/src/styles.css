@@ -1,0 +1,185 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Baloo 2", "Nunito", "Noto Sans Devanagari", system-ui, sans-serif;
+  --font-display: "Baloo 2", "Noto Sans Devanagari", system-ui, sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --color-beam-gold: var(--beam-gold);
+  --color-beam-red: var(--beam-red);
+  --color-beam-blue: var(--beam-blue);
+  --color-cell: var(--cell);
+  --color-cell-edge: var(--cell-edge);
+  --color-wall: var(--wall);
+  --color-mirror: var(--mirror);
+  --color-glim: var(--glim);
+  --color-success: var(--success);
+}
+
+:root {
+  --radius: 1.25rem;
+  --background: oklch(0.24 0.07 255);
+  --foreground: oklch(0.97 0.02 90);
+  --card: oklch(0.31 0.08 250);
+  --card-foreground: oklch(0.97 0.02 90);
+  --popover: oklch(0.31 0.08 250);
+  --popover-foreground: oklch(0.97 0.02 90);
+  --primary: oklch(0.83 0.16 80);
+  --primary-foreground: oklch(0.25 0.06 60);
+  --secondary: oklch(0.72 0.13 195);
+  --secondary-foreground: oklch(0.2 0.05 230);
+  --muted: oklch(0.36 0.07 250);
+  --muted-foreground: oklch(0.82 0.04 240);
+  --accent: oklch(0.78 0.14 340);
+  --accent-foreground: oklch(0.22 0.06 340);
+  --destructive: oklch(0.68 0.18 30);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.45 0.08 245);
+  --input: oklch(0.45 0.08 245);
+  --ring: oklch(0.83 0.16 80);
+  --gold: oklch(0.86 0.17 88);
+  --disk-outer: oklch(0.7 0.2 45);
+  --disk-inner: oklch(0.9 0.15 80);
+  --space-void: oklch(0.08 0.02 270);
+  --rock-a: oklch(0.55 0.03 60);
+  --rock-b: oklch(0.3 0.02 50);
+  --crater: oklch(0.25 0.02 50);
+  --beam-gold: oklch(0.88 0.16 80);
+  --beam-red: oklch(0.7 0.21 25);
+  --beam-blue: oklch(0.75 0.14 225);
+  --cell: oklch(0.33 0.07 248);
+  --cell-edge: oklch(0.42 0.08 245);
+  --wall: oklch(0.55 0.1 290);
+  --mirror: oklch(0.93 0.04 210);
+  --glim: oklch(0.92 0.12 95);
+  --success: oklch(0.8 0.17 150);
+  --beam-white: oklch(0.98 0.03 90);
+  --beam-green: oklch(0.82 0.2 150);
+  --space-deep: oklch(0.13 0.03 275);
+  --space-brick: oklch(0.42 0.06 285);
+  --sun-core: oklch(0.97 0.08 95);
+  --sun-glow: oklch(0.85 0.17 75);
+  --planet-dull-a: oklch(0.55 0.05 60);
+  --planet-dull-b: oklch(0.32 0.04 50);
+  --earth-a: oklch(0.65 0.15 240); --earth-b: oklch(0.7 0.18 145);
+  --mars-a: oklch(0.68 0.19 35); --mars-b: oklch(0.5 0.16 30);
+  --ice-a: oklch(0.92 0.06 220); --ice-b: oklch(0.72 0.12 230);
+  --jungle-a: oklch(0.72 0.2 145); --jungle-b: oklch(0.5 0.15 160);
+  --ocean-a: oklch(0.62 0.17 255); --ocean-b: oklch(0.45 0.16 265);
+  --ringed-a: oklch(0.85 0.12 85); --ringed-b: oklch(0.62 0.13 60);
+  --hole-ring: oklch(0.7 0.18 50);
+  --wind: oklch(0.72 0.13 225);
+
+  --gradient-sky: radial-gradient(ellipse at 20% 0%, oklch(0.38 0.1 220) 0%, transparent 55%),
+    radial-gradient(ellipse at 90% 100%, oklch(0.34 0.1 190) 0%, transparent 50%),
+    linear-gradient(180deg, oklch(0.22 0.07 260), oklch(0.27 0.08 235));
+  --gradient-gold: linear-gradient(180deg, oklch(0.9 0.15 90), oklch(0.78 0.17 65));
+  --gradient-teal: linear-gradient(180deg, oklch(0.8 0.12 190), oklch(0.66 0.13 205));
+  --gradient-card: linear-gradient(180deg, oklch(0.34 0.08 248), oklch(0.29 0.08 252));
+  --shadow-chunky: 0 6px 0 0 oklch(0.16 0.05 260 / 0.7), 0 12px 24px -8px oklch(0.1 0.05 260 / 0.6);
+  --shadow-glow: 0 0 24px oklch(0.88 0.16 80 / 0.55);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html, body { overscroll-behavior: none; }
+  body {
+    background: var(--gradient-sky);
+    background-attachment: fixed;
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@utility bg-sky { background: var(--gradient-sky); }
+@utility bg-gold-grad { background: var(--gradient-gold); }
+@utility bg-teal-grad { background: var(--gradient-teal); }
+@utility bg-card-grad { background: var(--gradient-card); }
+@utility shadow-chunky { box-shadow: var(--shadow-chunky); }
+@utility shadow-glow { box-shadow: var(--shadow-glow); }
+@utility text-glow { text-shadow: 0 0 18px oklch(0.88 0.16 80 / 0.7), 0 3px 0 oklch(0.4 0.1 60); }
+
+/* Twinkling sky dots */
+@utility starfield {
+  background-image:
+    radial-gradient(2px 2px at 10% 20%, oklch(1 0 0 / 0.8), transparent),
+    radial-gradient(1.5px 1.5px at 30% 70%, oklch(1 0 0 / 0.6), transparent),
+    radial-gradient(2px 2px at 55% 15%, oklch(1 0 0 / 0.7), transparent),
+    radial-gradient(1.5px 1.5px at 75% 55%, oklch(1 0 0 / 0.6), transparent),
+    radial-gradient(2px 2px at 90% 30%, oklch(1 0 0 / 0.8), transparent),
+    radial-gradient(1.5px 1.5px at 45% 90%, oklch(1 0 0 / 0.5), transparent);
+  animation: twinkle 5s ease-in-out infinite alternate;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes drift { to { stroke-dashoffset: -80; } }
+@keyframes twinkle { from { opacity: 0.5; } to { opacity: 1; } }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes pop-in { from { opacity: 0; transform: scale(0.4); } to { opacity: 1; transform: scale(1); } }
+@keyframes wobble {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-8deg); }
+  75% { transform: rotate(8deg); }
+}
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@keyframes wave { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-25deg); } }
+@keyframes tilt { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-14deg); } }
+@keyframes burst {
+  from { opacity: 1; transform: translate(0, 0) scale(0.5); }
+  to { opacity: 0; transform: translate(var(--bx), var(--by)) scale(1.2); }
+}
+@keyframes pulse-ring { 0% { opacity: 0.9; } 50% { opacity: 0.35; } 100% { opacity: 0.9; } }
+@keyframes shimmer {
+  0% { filter: brightness(1); }
+  50% { filter: brightness(1.6) drop-shadow(0 0 6px var(--gold)); }
+  100% { filter: brightness(1); }
+}
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+
+.beam-seg { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 400ms linear forwards; }
+.fade-in { opacity: 0; animation: pop-in 300ms ease-out forwards; }
+.anim-wobble { animation: wobble 0.5s ease-in-out 2; transform-box: fill-box; transform-origin: center; }
+.anim-float { animation: float 3s ease-in-out infinite; }
+.anim-wave { animation: wave 0.6s ease-in-out 3; transform-box: fill-box; transform-origin: bottom center; }
+.anim-tilt { animation: tilt 1.2s ease-in-out 1; transform-box: fill-box; transform-origin: bottom center; }
+.anim-pulse { animation: pulse-ring 1.4s ease-in-out infinite; }
+.anim-shimmer { animation: shimmer 0.8s ease-in-out 3; }
+.anim-spin-slow { animation: spin-slow 8s linear infinite; transform-box: fill-box; transform-origin: center; }
+.burst-dot { animation: burst 900ms ease-out forwards; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 1ms !important; animation-iteration-count: 1 !important; animation-delay: 0ms !important; transition-duration: 1ms !important; }
+}
+
+@keyframes ring-in { from { opacity: 0; transform: scale(0.3); } to { opacity: 1; transform: scale(1); } }
+@keyframes beam-pulse { 0%,100% { opacity: .55; } 50% { opacity: 1; } }
